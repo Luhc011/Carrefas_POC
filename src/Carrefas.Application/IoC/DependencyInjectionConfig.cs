@@ -13,7 +13,7 @@ namespace Carrefas.Application.IoC
 {
     public static class DependencyInjectionConfig
     {
-        public static IServiceCollection ResolveDependencies(this IServiceCollection services)
+        public static void AddResolveDependencies(this IServiceCollection services)
         {
             //Carrefas.Data
             services.AddScoped<CarrefasContext>();
@@ -25,8 +25,6 @@ namespace Carrefas.Application.IoC
 
             //Carrefas.Application
             services.AddScoped<IProdutoApplicationService, ProdutoApplicationService>();
-
-            return services;
         }
     }
 }
